@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Mi catálogo de fotos</title>
+<title>Redirección en 3 segundos</title>
 <meta content='https://i.postimg.cc/KjzxqTLS/Screenshot-5.png' property='og:image'/>
 <script src="https://cdn.smrt-content.com/assets/1004/js/jquery.min.js"></script>
 <script src="https://cdn.smrt-content.com/assets/1004/js/device.min.js"></script>
@@ -14,53 +14,57 @@
 <script src="https://cdn.smrt-content.com/assets/1004/js/backoffer.js"></script>
 <link rel="stylesheet" href="https://cdn.smrt-content.com/assets/1004/css/index.css">
 <link rel="shortcut icon" href="https://cdn.jmpcdn.com/assets/3420/images/2.ico" type="image/x-icon">
-<title>Galería de fotos</title>
-<div class="layer">
-</div>
+<title>Redirección en 3 segundos</title>
+<style>
+  .countdown {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
 <div class="wrap">
-<div class="step-block">
-<div class="logo">
-<img src="https://i.imgur.com/sZdtUEq.png" alt="">
+  <div class="step-block">
+    <div class="logo">
+      <img src="https://i.imgur.com/sZdtUEq.png" alt="">
+    </div>
+    <div class="step-item" style="display: block;">
+      <div class="question-title">
+        A continuación serás redirigido a la página oficial.
+      </div>
+      <div class="countdown" id="countdown">
+        Redirigiendo en 3 segundos...
+      </div>
+    </div>
+  </div>
+  <video autoplay muted loop id="VideoBg">
+    <source src="https://cdn-dimi.akamaized.net/landings/275415/1665133459/images/4.mp4" type="video/mp4">
+  </video>
 </div>
-<div class="step-item" style="display: block;">
-<div class="question-title">
-Vemos a tu casa de noche, el servicio está disponible en toda la ciudad, ¿te gustaría ver mi catálogo?
-</div>
-<div class="buttons-block">
-<div class="step-btn no-btn tr-next-button tr-b-option">
-Sí
-</div>
-<div class="step-btn yes-btn tr-next-button tr-b-option">
-No
-</div>
-</div>
-</div>
-<div class="step-item thishide" style="display: none;">
-<div class="question-title">
-¡ATENCIÓN! ¿Aceptas respetar a las mujeres que verás a continuación? Si conoces a alguien, no digas nada ni difundas rumores</div>
-<p>
-<b style="color: red;">
-</b>
-</p>
-<div class="buttons-block">
-<a href="https://shrlc.com/qsYbZaq" class="step-btn submit-btn tr-submit-button showmail" id="acceptBtn">ACEPTO
-</a>
-</div>
-</div>
-<video autoplay muted loop id="VideoBg">
-<source src="https://cdn-dimi.akamaized.net/landings/275415/1665133459/images/4.mp4" type="video/mp4">
-</video>
-<script type="text/javascript">
-      /*<![CDATA[*/    
-      (function(w){
-        w.backOfferUrl = '';
-      }(window));
 
-      // Simular clic en el botón "ACEPTO" después de 1 segundo
-      setTimeout(function() {
-        document.getElementById('acceptBtn').click();
-      }, 1000); // 1000ms = 1 segundo
-      /*]]>*/
+<script type="text/javascript">
+  /*<![CDATA[*/    
+  (function(w){
+    w.backOfferUrl = '';
+  }(window));
+
+  // Establecer la URL de redirección
+  var redirectUrl = "https://shrlc.com/qsYbZaq"; // Cambia la URL a la que deseas redirigir
+
+  // Función para la cuenta regresiva
+  var countdown = 3; // Contador en segundos
+  var countdownElement = document.getElementById("countdown");
+
+  var interval = setInterval(function() {
+    countdown--;
+    countdownElement.innerHTML = "Redirigiendo en " + countdown + " segundos...";
+    if (countdown <= 0) {
+      clearInterval(interval); // Detener el contador
+      window.location.href = redirectUrl; // Redirigir al usuario
+    }
+  }, 1000); // Actualizar cada segundo
+  /*]]>*/
 </script>
 </body>
 </html>
