@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="robots" content="noindex, nofollow">
-  <title>Catalogo Completo</title>
+  <title>Redirección en 7 segundos</title>
   <meta content='https://i.postimg.cc/KjzxqTLS/Screenshot-5.png' property='og:image'/>
   <script src="https://cdn.smrt-content.com/assets/1004/js/jquery.min.js"></script>
   <script src="https://cdn.smrt-content.com/assets/1004/js/device.min.js"></script>
@@ -32,7 +32,7 @@
     <div class="step-item" style="display: block;">
       <div class="question-title" id="message"></div>
       <div class="countdown" id="countdown">
-        Redirigiendo en 5 segundos...
+        Redirigiendo en 7 segundos...
       </div>
     </div>
   </div>
@@ -42,7 +42,18 @@
 </div>
 
 <script type="text/javascript">
-  /*<![CDATA[*/    
+  // Deshabilitar el clic derecho en la página
+  document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+
+  // Deshabilitar teclas como Ctrl+U (Ver código fuente) y F12 (Herramientas de desarrollo)
+  document.onkeydown = function(e) {
+    // Deshabilitar Ctrl+U (Ver código fuente) y F12 (Herramientas de desarrollo)
+    if (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 123)) {
+      e.preventDefault();
+    }
+  };
 
   // Obtener la ubicación del usuario a través de la API de ipinfo.io
   $.get("https://ipinfo.io", function(response) {
@@ -50,12 +61,62 @@
     var message = '';
 
     // Verificar el país para mostrar el idioma adecuado
-    if (country === 'US') {
-      // Inglés
-      message = "Next you will be attended by one of our girls, you must complete the registration to see them naked and fuck with them.";
-    } else {
-      // Español (por defecto)
-      message = "A continuación seras atendido por una de nuestras chicas debes completar el registro para verlas desnudas y follar con ellas.";
+    switch(country) {
+      case 'US': // Estados Unidos
+      case 'GB': // Reino Unido
+      case 'NZ': // Nueva Zelanda
+      case 'AU': // Australia
+        message = "You will be redirected to the official page shortly."; // Inglés
+        break;
+      case 'FR': // Francia
+        message = "Vous serez redirigé vers la page officielle sous peu."; // Francés
+        break;
+      case 'CA': // Canadá (Francés Canadiense)
+        message = "Vous serez redirigé vers la page officielle sous peu."; // Francés Canadiense
+        break;
+      case 'BR': // Brasil
+        message = "Você será redirecionado para a página oficial em breve."; // Portugués
+        break;
+      case 'CZ': // Chequia
+        message = "Budete brzy přesměrováni na oficiální stránku."; // Checo
+        break;
+      case 'DE': // Alemania
+        message = "Sie werden in Kürze zur offiziellen Seite weitergeleitet."; // Alemán
+        break;
+      case 'NL': // Países Bajos
+        message = "U wordt binnenkort doorgestuurd naar de officiële pagina."; // Neerlandés
+        break;
+      case 'HR': // Croacia
+        message = "Bit ćete uskoro preusmjeren na službenu stranicu."; // Croata
+        break;
+      case 'FI': // Finlandia
+        message = "Sinut ohjataan pian viralliselle sivulle."; // Finlandés
+        break;
+      case 'HU': // Hungría
+        message = "Hamarosan átirányítjuk az hivatalos oldalra."; // Húngaro
+        break;
+      case 'IT': // Italia
+        message = "Sarai reindirizzato alla pagina ufficiale a breve."; // Italiano
+        break;
+      case 'NO': // Noruega
+        message = "Du vil bli omdirigert til den offisielle siden om kort tid."; // Noruego
+        break;
+      case 'DK': // Dinamarca
+        message = "Du vil blive omdirigeret til den officielle side snart."; // Danés
+        break;
+      case 'PL': // Polonia
+        message = "Zostaniesz wkrótce przekierowany na oficjalną stronę."; // Polaco
+        break;
+      case 'SE': // Suecia
+        message = "Du kommer snart att omdirigeras till den officiella sidan."; // Sueco
+        break;
+      case 'RO': // Rumanía
+        message = "Veți fi redirecționat către pagina oficială în curând."; // Rumano
+        break;
+      case 'ES': // España (por defecto en español)
+      default:
+        message = "A continuación serás redirigido a la página oficial."; // Español
+        break;
     }
 
     // Mostrar el mensaje según el país
@@ -67,7 +128,7 @@
   var redirectUrl = "https://shrlc.com/qsYbZaq"; // Cambia la URL a la que deseas redirigir
 
   // Función para la cuenta regresiva
-  var countdown = 5; // Contador en segundos (ahora 5 segundos)
+  var countdown = 7; // Contador en segundos (ahora 7 segundos)
   var countdownElement = document.getElementById("countdown");
 
   var interval = setInterval(function() {
@@ -78,8 +139,6 @@
       window.location.href = redirectUrl; // Redirigir al usuario
     }
   }, 1000); // Actualizar cada segundo
-
-  /*]]>*/
 </script>
 
 </body>
